@@ -37,17 +37,17 @@ $(document).ready(function() {
     var data = JSON.parse(jqXHR.responseText);
     window.MyApp.alert( 'danger', data.message );
   });
-
+result = true;
   $('#register-username')
   .change(function(e) {
-    console.log("register-usernamne")
+    //console.log("register-usernamne")
     nom_user = "";
     var inputUsername = $(this);
     var username = inputUsername.val();
     var re = /^[A-Za-z][A-Za-z0-9_]+$/;
     var isUsernameValid = username.match(re);
     user_verif = verif(isUsernameValid)
-    console.log(user_verif)
+    console.log(result)
     if(! isUsernameValid) {
       markInputAsInvalid( inputUsername,
         "L'identifiant doit commencer par une lettre, et être suivi par " +
@@ -59,25 +59,21 @@ $(document).ready(function() {
       return;
     }});
 
-  /*function verif(isUsernameValid) {
-    console.log("verif_user")
-    $.ajax({
-      URL: 'utilisateur.json',
-      type: 'GET',
-      data: 'username',
-      success: function (json) {
-        for (var user in json) {
-          alert(json[user]);
+  function verif(isUsernameValid) {
+        $.getJSON("utilisateur.json", function blabla (data){
+        for(var i = 0; i < data.user.length; i++){
+          if(data.user[i].username == isUsernameValid){
+            console.log("True");
+              markInputAsInvalid(inputUsername, "L'identifiant est déjà pris");
+            return result = true;
+          } else if (data.user[i].username != isUsernameValid && i == data.user.length - 1){
+            console.log("False");
+            return result = false;
+          }
         }
-    });
-        console.log("nom_user: ", nom_user)
-        if (nom_user == isUsernameValid) {
-          return true;
-        }
-        else {
-          return false;
-        }
-      }}; */
+      })
+  };
+
 
     // Envoi d'une requête AJAX vers une URL qui va nous renvoyer un
     // objet JSON avec un booléen "success" qui va nous dire si le username
@@ -181,7 +177,7 @@ $('#register-password')
           console.log("passage")
           var i = 0
           while(i < data.user.length){
-            console.log(user.identifier, user.password, data.user[i], i, data.user.length);
+            // console.log(user.identifier, user.password, data.user[i], i, data.user.length);
             if (user.identifier == data.user[i].username && user.password == data.user[i].password){
             MyApp.alert('success', "Vous êtes identifié, " + data.user[i].username)
             break;}
