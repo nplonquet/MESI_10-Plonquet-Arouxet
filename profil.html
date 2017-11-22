@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum geek</title>
+    <meta charset="utf-8">
+    <script language="Javascript" src="jquery-3.2.1.min.js"></script>
+    <script language="Javascript" src="profil.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style_profil.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">FORUM</h1>
+        <h2 class="text-center">Le forum de la culture geek</h2>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link col-md-3" href="index.html">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link col-md-3" href="profil.html">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link col-md-3" href="connexion.html">Connexion/Deconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div ng-show="product.images.length" class="img-wrap col-md-3" id="test">
+        <img src="https://vignette.wikia.nocookie.net/crashban/images/1/1a/Crash_Bandicoot_XS.png/revision/latest?cb=20151120044516" />
+    </div>
+
+<div id = "droite">
+    <br>Pseudo: <div id = "nom">Sara</div>
+    <br>Genre: <div id = "genre">Femme</div>
+    <br>Inscrit(e) le : <div id="date">21/11/2017</div>
+</div>
+
+
+    <div id="pref"><h3>Preferences:</h3><br>
+       <ul> <h5>Films</h5>
+            <li><div id = "pref1f">Horreur</div></li>
+            <li><div id = "pref2f">Fantastique</div></li>
+        </ul>
+        <ul> <h5>Jeux</h5>
+            <li><div id = "pref1j">Crash Bandicoot</div></li>
+            <li><div id = "pref2j">Lara Croft</div></li>
+        </ul>
+        <ul> <h5>Séries</h5>
+            <li>Stanger Things</li>
+            <li>Riverdale</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

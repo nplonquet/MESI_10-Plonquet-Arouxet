@@ -1,0 +1,21 @@
+{
+    "user": [{
+        "id": 1,
+        "username": "toto",
+        "password": "titi",
+        "email": "toto@gmail.com",
+        "preferences": [{
+            "pref1": "FPS",
+            "pref2": "RPG",
+            "pref3": "VR"}]
+            },{
+        "id": 2,
+        "username": "JMB",
+        "password": "Coucou",
+        "preferences": [{
+                        "pref1": "FPS",
+                        "pref2": "RPG",
+                        "pref3": "VR"}]
+        
+        }]
+}

@@ -1,0 +1,27 @@
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1;
+}
+th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+}
+
+#top {
+	width: 1536px;
+}
+
+td {
+	width: 33%;
+}
+
+.btn-success {
+	background-color: #58C4E8;
+	border-color: #58C4E8;
+}
+
+#bt{
+	margin: auto;
+}
