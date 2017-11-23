@@ -1,0 +1,26 @@
+{"topic": [
+    {
+        "id": 1,
+        "titre": "Star wars BF",
+        "date": "15-06-2016",
+        "tags": [
+            "RPG",
+            "Action",
+            "Science-fiction"
+        ],
+        "text": "Lorem ipsum",
+        "Rate": 15
+    },
+    {
+        "id": 2,
+        "titre": "Skyrim",
+        "tags": [
+            "RPG",
+            "Action",
+            "Medieval-fantastique"
+        ],
+        "text": "Lorem ipsum",
+        "Rate": 3
+    }
+]
+}
