@@ -25,54 +25,106 @@ $(document).ready(function() {
     .html( message );
   }
 
-  // Paramètres pour les envois par AJAX
-  $.ajaxSetup({
-      headers: {
-          'content-type': 'application/json'
-      }
-  });
 
-  // Gestion des erreurs
-  $( document ).ajaxError(function(event, jqXHR,  ajaxSettings, thrownError) {
-    var data = JSON.parse(jqXHR.responseText);
-    window.MyApp.alert( 'danger', data.message );
-  });
-result = true;
+
+//CREATION D'UN TABLEAU CONTENANT TOUS LES UTILISATEURS
+var utilisateurs = [];
+
+//Variable pour saoir si un utlisateur est connecté
+var estConnecte = false;
+
+//création d'un prototype utilisateurs
+var utilisateur = {
+  //initialiser l'utilisateurs
+  initUser: function (mail, password, pseudo) {
+    this.mail = mail;
+    this.password = password;
+    this.pseudo = pseudo;
+  },
+  //ajouter cet utilisateur dans le tableau
+  ajouter: function () {
+    utilisateurs.push(this);
+  }
+};
+
+//Charger tous les utilisateurs présents dans le fichier json pour les ajouter dans le tableau
+$(document).ready(function ($) {
+  $.post(
+    'utilisateur.json',
+    function (data) {
+      var i = 0;
+      while (i < data.user.length) {
+        var util = Object.create(utilisateur);
+        util.initUser(data.user[i].email, data.user[i].password, data.user[i].username);
+        util.ajouter();
+        //console.log(data.user[i]);
+        //console.log(utilisateurs)
+        i++;
+      }
+    },
+    'json'
+  );
+});
+
+function verif_username (IsValidUN, utilisateurs){
+  console.log("verif_username")
+  for (var i = 0; i < utilisateurs.length; i++){
+    if (utilisateurs[i].pseudo == IsValidUN){
+      return true;
+    } else if (i == utilisateurs.length - 1){
+      return false
+    }
+
+  }
+}
+
+  function verif_mail(IsValidmail, utilisateurs) {
+    console.log("verif_mail")
+    for (var i = 0; i < utilisateurs.length; i++) {
+      if (utilisateurs[i].mail == IsValidmail) {
+        return true;
+      } else if (i == utilisateurs.length - 1) {
+        return false
+      }
+
+    }
+  }
+
+  function verif_password(IsValidpassword, utilisateurs) {
+    console.log("verif_password")
+    for (var i = 0; i < utilisateurs.length; i++) {
+      if (utilisateurs[i].password == IsValidpassword) {
+        return true;
+      } else if (i == utilisateurs.length - 1) {
+        return false
+      }
+
+    }
+  }
   $('#register-username')
   .change(function(e) {
-    //console.log("register-usernamne")
+    console.log(utilisateurs)
     nom_user = "";
     var inputUsername = $(this);
     var username = inputUsername.val();
     var re = /^[A-Za-z][A-Za-z0-9_]+$/;
     var isUsernameValid = username.match(re);
-    user_verif = verif(isUsernameValid)
-    console.log(result)
+    console.log("fonction")
+    user_verif = verif_username(isUsernameValid, utilisateurs)
+    console.log(user_verif)
     if(! isUsernameValid) {
       markInputAsInvalid( inputUsername,
         "L'identifiant doit commencer par une lettre, et être suivi par " +
         "au moins une lettre OU un chiffre OU un tiret bas _"
-      );
-
-
-
+      );} else if (user_verif == true) {
+         markInputAsInvalid(inputUsername,
+        "L'identifiant déjà pris... " +
+        "Veuillez-en choisir un autre"
+      );} else{
+        markInputAsValid(inputUsername);
+      }
       return;
-    }});
-
-  function verif(isUsernameValid) {
-        $.getJSON("utilisateur.json", function blabla (data){
-        for(var i = 0; i < data.user.length; i++){
-          if(data.user[i].username == isUsernameValid){
-            console.log("True");
-              markInputAsInvalid(inputUsername, "L'identifiant est déjà pris");
-            return result = true;
-          } else if (data.user[i].username != isUsernameValid && i == data.user.length - 1){
-            console.log("False");
-            return result = false;
-          }
-        }
-      })
-  };
+    });
 
 
     // Envoi d'une requête AJAX vers une URL qui va nous renvoyer un
@@ -86,25 +138,21 @@ result = true;
     var email = inputEmail.val();
     var re = /^[A-Za-z][A-Za-z0-9_\.]+@[A-Za-z][A-Za-z0-9_\.]+\.[a-z]{2,}$/;
     var isEmailValid = email.match(re);
+    var email_verif = verif_mail(isEmailValid, utilisateurs);
     if(! isEmailValid) {
-        markInputAsInvalid( inputEmail );
+        markInputAsInvalid( inputEmail, 
+        "Email invalide il doit posséder une lettre suivis de" +
+        "au moins un chiffre ou une lettre ou un . et elle doit comporter un @ et un ."
+       );
         return;
-    };
-
-    // Même chose que pour le username, cette fois avec l'email
-    $.get(
-      "utilisateur.json",
-      function(response) {
-        console.log(response.success)
-        if(response.success) {
-          markInputAsValid( isEmailValid );
-        }
-        else {
-          markInputAsInvalid( inputEmail, "Cet e-mail est déjà pris" );
-        }
-      }
-    );
-  })
+    } else if(email_verif == true){
+      markInputAsInvalid(inputEmail,
+        "L'email déjà pris... " +
+        "Veuillez-en choisir un autre");
+    } else {
+      markInputAsValid(inputEmail);
+    }});
+      
 
 $('#register-password')
   .change(function(e) {
@@ -136,64 +184,26 @@ $('#register-password')
       MyApp.alert( 'danger', message );
       return false;
     }
-    // Dans chaque itération input[i] est un élément DOM
     var username = $('#register-username').val();
-    var email    = $('#register-email').val();
-    var password = $('#register-password').val();
-    var user = {
-      username: username,
-      email: email,
-      password: password
-    };
-    var userJSON = JSON.stringify(user);
-    console.log(user);
-    console.log(userJSON);
-    e.preventDefault();
-    inputs.val('').removeClass('is-valid');
-    $.post(
-      'utilisateur.json',
-      userJSON,
-      function(data) {
-        window.MyApp.alert( 'success', 'Bienvenue, ' + data.user.username );
-      },
-      'json'
-    );
+    window.MyApp.alert( 'success', 'Bienvenue, ' + username );
+
   })
 
 
   $('#form-login').submit(function(e) {
       var identifier = $('#login-identifier').val();
       var password   = $('#login-password').val();
-      var user = {
-          identifier: identifier,
-          password: password
-      };
-      e.preventDefault();
-      $(this).find('input').val('');
-      $.post(
-        'utilisateur.json',
-        user,
-        function(data) {
-          console.log("passage")
-          var i = 0
-          while(i < data.user.length){
-            // console.log(user.identifier, user.password, data.user[i], i, data.user.length);
-            if (user.identifier == data.user[i].username && user.password == data.user[i].password){
-            MyApp.alert('success', "Vous êtes identifié, " + data.user[i].username)
-            break;}
-          else if (i == data.user.length - 1){
-            if(user.identifier == "" || user.password == ""){
-              MyApp.alert('danger', "Veuillez saisir tous les champs pour vous identifier")
-            } else{
-            MyApp.alert('danger', "Nous ne parvenons pas à vous identifier: utilisateur ou mdp incorrect")
-            }
-        }
-        i++}
-        },
-        'json'
-      );
-  })
 
+      if (verif_username(identifier, utilisateurs) && verif_password(password, utilisateurs)){
+        MyApp.alert('success', "Vous êtes identifié, " + identifier)
+      } else if (identifier == "" || password == ""){
+        MyApp.alert('danger', "Veuillez saisir tous les champs pour vous identifier")
+      } else {
+        MyApp.alert('danger', "Nous ne parvenons pas à vous identifier: utilisateur ou mdp incorrect")
+      }
+      e.preventDefault();
+      
+  });
   var onglets = $('#onglets li a');
 
   onglets.click(function(e) {

@@ -12,6 +12,7 @@
         "id": 2,
         "username": "JMB",
         "password": "Coucou",
+        "email": "JMB@hotmail.fr",
         "preferences": [{
                         "pref1": "FPS",
                         "pref2": "RPG",
