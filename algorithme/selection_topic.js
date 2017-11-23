@@ -31,7 +31,11 @@ var utilisateur = {
 };
 
 //Charger tous les utilisateurs présents dans le fichier json pour les ajouter dans le tableau
-$(document).ready(function ($) {
+$(document).ready(function($) {
+  $('#ex1-button1').click(function() {
+    $(this).toggleClass('red');
+    filtre_pref(utilisateurs, topics);
+  });
     $.post(
         'topic.json',
         function (data) {
@@ -40,9 +44,9 @@ $(document).ready(function ($) {
                 var top = Object.create(topic);
                 top.initTopic(data.topic[i].id, data.topic[i].tags, data.topic[i].date);
                 top.ajouter();
-                //console.log(data.user[i]);
-                
-                i++; 
+                //console.log(topics);
+
+                i++;
             }
         },
         'json'
@@ -57,7 +61,7 @@ $(document).ready(function ($) {
                 util.initUser(data.user[i].email, data.user[i].password, data.user[i].username);
                 util.ajouter();
                 //console.log(data.user[i]);
-                //console.log(utilisateurs)
+                //console.log("ok")
                 i++;
             }
         },
@@ -72,18 +76,37 @@ $(document).ready(function ($) {
  */
 
 
-function test (topics){
+function test (){
     //date = topics[0].date
-    console.log(topics)
+    console.log(utilisateurs)
 }
-
+test()
  function filtre_pref (user_pref, topics){
      var topic_filtre = []
      var topic_tag = []
+     var inter = []
+     date_topic = new Date;
+     date_topic = topics[0].date
+     console.log(date_topic, "date", date_topic);
 
-     type()
+    //1ere étape: trie par date
+
+    //2nd étape: trie par préférences
+
+    //3eme étape: trie par note
+     i = 0;
+     while(i < topics.length){
+       j += 1
+       for(j; j < topics.length - 1)
+     }
+
+    //4eme étape: retour des variable
+
+
+
+
+
+
+
  }
-
-$('#test').click(function () {
-    console.log('Click');
-});
+//filtre_pref(utilisateurs, topics);

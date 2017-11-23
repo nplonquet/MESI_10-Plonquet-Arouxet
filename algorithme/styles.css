@@ -1,0 +1,133 @@
+
+.container {
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  width: 96%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /*max-width: 600px;*/
+}
+input[type="submit"],
+button {
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.blue {
+  background: #24d;
+}
+.red {
+  background: #d42;
+}
+.green {
+  background: #4b2;
+}
+.gray {
+  background: #888;
+}
+textarea,
+select,
+input {
+  border: 1px solid #ddd;  
+  padding: 12px;
+  border-radius: 3px;
+}
+input.input-sm {
+  padding: 6px;
+  font-size: 70%;
+}
+select {
+  background: #fcfcfc;
+}
+a,
+button {
+  margin: 5px;
+  box-sizing: border-box;
+}
+.bordure-flashy {
+  border: 2px solid red;
+}
+
+#html-content h5 {
+  margin: 20px 0 5px 0;
+}
+#html-content p {
+  margin: 10px 0;
+}
+button.d {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+/**
+ * Styles communs pour les différents exemples
+ */
+a.active {
+  font-weight: bold;
+  color: #48c;
+}
+.cyan {
+  background: #6ff;
+}
+.magenta {
+  background: #f6f;
+}
+.yellow {
+  background: #ff6;
+  color: #444;
+}
+.orange {
+  background: #eb6;
+}
+.bold-text {
+  font-weight: bold;
+}
+.underlined-text {
+  text-decoration: underline;
+}
+.text-green {
+  color: #4b2;
+}
+.text-red {
+  color: #b42;
+}
+.table {
+  border-collapse: collapse;
+}
+.table tr td {
+  border: 1px solid #aaa;
+  padding: 2px;
+}
+ul.tab-nav {
+   padding-left: 5px;
+   padding-bottom: 4px;
+   border-bottom: 1px solid #eee;
+}
+ul.tab-nav li {
+  display:inline;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
+}
+
+#qunit-header,
+#qunit-testrunner-toolbar {
+  display: none;
+}
+#revert-editor {
+  background: none;
+  border: none;
+  position: absolute;
+  padding: 0 3px;
+  top: 0;
+  left: 0;
+  color: red;
+  font-size: 11px;
+}
