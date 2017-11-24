@@ -6,11 +6,13 @@ var utilisateurs = []
 //création d'un prototype utilisateurs
 var topic = {
     //initialiser l'utilisateurs
-    initTopic: function (id, tags, date, rate ) {
+    initTopic: function (id, titre, tags, date, rate, auteur ) {
         this.id = id;
         this.tags = tags;
         this.date = date;
         this.rate = rate;
+        this.titre = titre;
+        this.auteur = auteur;
     },
     //ajouter cet utilisateur dans le tableau
     ajouter: function () {
@@ -37,13 +39,17 @@ $(document).ready(function($) {
     filtre_pref(utilisateurs, topics_brut, 1);
   });
 
-  $("#test").click(function(){
+  $("#jeux_interet").hover(function(e){
       topics_brut = []
           topics_brut = topics
           console.log(topics_brut)
       
       topics = filtre_pref(utilisateurs, topics_brut, 1);
       console.log(topics)
+      $("#interet1").html('<a href = "#" ><strong>'+ (topics[0].titre)+ '</strong> - auteur: ' + topics[0].auteur + '- date: '+ topics[0].date+'</a>');
+      $("#interet2").html('<a href = "#" ><strong>' + (topics[1].titre) + '</strong> - auteur: ' + topics[1].auteur + '- date: ' + topics[1].date + '</a>');
+      $("#interet3").html('<a href = "#" ><strong>' + (topics[2].titre) + '</strong> - auteur: ' + topics[2].auteur + '- date: ' + topics[2].date + '</a>');
+      e.preventDefault();
   })
     $.post(
         'topic.json',
@@ -51,7 +57,7 @@ $(document).ready(function($) {
             var i = 0;
            while (i < data.topic.length) {
                 var top = Object.create(topic);
-                top.initTopic(data.topic[i].id, data.topic[i].tags, data.topic[i].date, data.topic[i].rate);
+                top.initTopic(data.topic[i].id, data.topic[i].titre, data.topic[i].tags, data.topic[i].date, data.topic[i].rate, data.topic[i].Auteur);
                 top.ajouter();
                 console.log(topics)
 
@@ -103,7 +109,7 @@ function filtre_pref (user_pref, topics_brut, id){
          return []
      }
 
-     
+
     //1ere étape: trie par date
      //Comming Soon...
 
