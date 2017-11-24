@@ -9,7 +9,7 @@
             "Science-fiction"
         ],
         "text": "Lorem ipsum",
-        "Rate": 15
+        "rate": 15
     },{
         "id": 2,
         "titre": "Skyrim",
@@ -20,8 +20,8 @@
             "Medieval-fantastique"
         ],
         "text": "Lorem ipsum",
-        "Rate": 3
-    }{
+        "rate": 3
+    },{
         "id": 3,
         "titre": "Doom",
         "date": "08-25-2017",
@@ -31,8 +31,8 @@
             "Science-fiction"
         ],
         "text": "Lorem ipsum",
-        "Rate": 5
-    }{
+        "rate": 5
+    },{
         "id": 4,
         "titre": "Dota",
         "date": "11-23-2017",
@@ -42,6 +42,17 @@
             "PC"
         ],
         "text": "Lorem ipsum",
-        "Rate": 9
+        "rate": 9
+    },{
+        "id": 5,
+        "titre": "Tomb rider",
+        "date": "11-23-2017",
+        "tags": [
+            "FPS",
+            "RPG",
+            "PC"
+        ],
+        "text": "Lorem ipsum",
+        "rate": 9
     }]
 }
