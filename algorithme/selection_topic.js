@@ -69,8 +69,6 @@ $(document).ready(function($) {
                 var util = Object.create(utilisateur);
                 util.initUser(data.user[i].id, data.user[i].preferences);
                 util.ajouter();
-                //console.log(data.user[i]);
-                //console.log("ok")
                 i++;
             }
         },
@@ -85,39 +83,37 @@ $(document).ready(function($) {
  */
 
 
-function test (){
-    //date = topics[0].date
-    console.log(utilisateurs)
-}
-test()
- 
-
 function filtre_pref (user_pref, topics_brut, id){
+
+    // Définition des données
     var preferences = [];
      var topic_retour = []
      var topic_tag = []
      var inter = []
-     //date_topic = new Date;
-    // date_topic = topics[0].date
-    // Placer les préférences de l'utilisateur concerné
+
+     // Récupération des préférence de l'utilisateur connecté
      for (var i = 0; i < user_pref.length; i++){
          if (user_pref[i].id == id){
             preferences = user_pref[i].pref
          }
      }
-    //console.log(preferences, topics_brut[0].tags[0]); 
+    
+    // Si l'utilisateurs n'a pas de préférences return un tableau vide 
+     if (preferences == []){
+         return []
+     }
 
+     
     //1ere étape: trie par date
      //Comming Soon...
+
+
     //2nd étape: trie par préférences
     for (var i = 0; i < topics_brut.length; i++){
-        console.log(i, topics_brut.length)
         var sortie = false;
         var cpt = 0
-        console.log("while", !sortie && (cpt < preferences.length), i)
         while(!sortie && (cpt < preferences.length)){
            var j = 0;
-            console.log("while2", j < topics_brut[i].tags.length)
            while(j < topics_brut[i].tags.length){
                if(preferences[cpt] == topics_brut[i].tags[j]){
                    topic_tag.push(topics_brut[i])
@@ -128,7 +124,6 @@ function filtre_pref (user_pref, topics_brut, id){
             cpt++
         }
     }
-    console.log(topic_tag)
     //3eme étape: trie par note (tri à bulle)
      i = 0;
      while(i < topic_tag.length){
@@ -152,10 +147,4 @@ function filtre_pref (user_pref, topics_brut, id){
      }
 
      return topic_retour
-
-
-
-
-
-
  }
