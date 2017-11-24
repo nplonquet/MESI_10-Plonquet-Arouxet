@@ -40,8 +40,7 @@ $(document).ready(function ($) {
     );
 });
 
- $(document).ready(function($){
-     if(utilisateurs != [])
+ $("#cont").click(function($){
      console.log(utilisateurs)
      user_info(utilisateurs, 0)
  })
