@@ -1,0 +1,72 @@
+main {
+    float : left;
+}
+
+
+#test {
+    float: left;
+    width: 13%;
+    height: 250px;
+}
+
+
+#droite {
+	width: 130px;
+	height: 250px;
+	overflow: auto;
+	display: flex;
+	text-align: center;
+	float: left;
+}
+
+
+#pref {
+	width: 600px;
+	height: 250px;
+	overflow: auto;
+}
+
+
+/*menu déroulant*/
+#menu-vertical, #menu-vertical ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  width: 300px; /* seule ligne rajoutée */
+}
+
+#menu-vertical li {
+  position: relative;
+  background:#EFEFEF; /* juste pour cacher le texte de la page en-dessous */
+}
+
+#menu-vertical a {
+  display:block;
+  text-decoration: none;
+  color: #000;
+}
+
+#menu-vertical ul {
+  position: absolute;
+  left:-999em;
+}
+
+#menu-vertical li:hover ul {
+  top: 0;
+  left: 300px;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 50%;
+    border: 1;
+}
+th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+}
+
+body {
+  background-color: #EDF0EE;
+}

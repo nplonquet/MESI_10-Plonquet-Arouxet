@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="comment.css">
+    <title></title>
+</head>
+<body>
+        <header>
+                <h1 class="text-center">FORUM</h1>
+                <h2 class="text-center">Le forum de la culture geek</h2>
+            </header>
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link col-md-3" href="index.html">Accueil
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link col-md-3" href="profil.html">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link col-md-3" href="connexion.html">Connexion/Inscription</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+<form action="/ma-page-de-traitement" method="post">
+
+    <div>
+        <label for="objet" class="text">Objet du message :</label>
+        <input id="objet"></input>
+    </div>
+
+
+   <!-- <span id = "v"> -->
+<!-- <ul id="menu-accordeon">
+    <li><a href="#">Tag</a>
+        <ul>
+            <li>Horreur</li>
+            <li>Science-Fiction</li>
+            <li>Romance</li>
+            <li>Jeux de rôles</li>
+            <li>Fantastique</li>
+            <li>Anime</li>
+            <li>Disney</li>
+        </ul>
+    </li>
+</ul> -->
+    
+        <div class="col-md-4" id="tag1">
+        <label for="inputState">Tag 1</label>
+        <select id="inputState" class="form-control">
+          <option selected>Tag1</option>
+          <option>Horreur</option>
+          <option>Science-Fiction</option>
+          <option>Romance</option>
+          <option>Fantastique</option>
+          <option>Anime</option>
+          <option>Disney</option>
+        </select>
+      </div> 
+
+      <div class="col-md-4" id="tag2">
+            <label for="inputState">Tag 2</label>
+            <select id="inputState" class="form-control">
+              <option selected>Tag2</option>
+              <option>Horreur</option>
+              <option>Science-Fiction</option>
+              <option>Romance</option>
+              <option>Fantastique</option>
+              <option>Anime</option>
+              <option>Disney</option>
+            </select>
+          </div>
+
+    <div class= "col-md-4" id="tag3">
+      <label for="inputState">Tag3</label>
+      <select id="inputState" class="form-control">
+        <option selected>Tag3</option>
+        <option>Horreur</option>
+        <option>Science-Fiction</option>
+        <option>Romance</option>
+        <option>Fantastique</option>
+        <option>Anime</option>
+        <option>Disney</option>
+      </select>
+    </div> 
+
+    <div>
+        <label for="message"  >Que voulez vous partager ?</label>
+        <textarea id="message" class="text col-md-12" placeholder="Tout messages allant à l'encontre de notre règlement seront automatiquement supprimés."></textarea>
+    </div>
+
+    <div class="button">
+        <button type="submit">Envoyer</button>
+    </div>
+</form>
+
+</body>
+</html>

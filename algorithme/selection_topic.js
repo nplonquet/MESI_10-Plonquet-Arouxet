@@ -43,8 +43,8 @@ $(document).ready(function($) {
       topics_brut = []
           topics_brut = topics
           console.log(topics_brut)
-      
-      topics = filtre_pref(utilisateurs, topics_brut, 1);
+
+      topics = filtre_pref(utilisateurs, topics_brut, 2);
       console.log(topics)
       $("#interet1").html('<a href = "#" ><strong>'+ (topics[0].titre)+ '</strong> - auteur: ' + topics[0].auteur + '- date: '+ topics[0].date+'</a>');
       $("#interet2").html('<a href = "#" ><strong>' + (topics[1].titre) + '</strong> - auteur: ' + topics[1].auteur + '- date: ' + topics[1].date + '</a>');
@@ -103,8 +103,8 @@ function filtre_pref (user_pref, topics_brut, id){
             preferences = user_pref[i].pref
          }
      }
-    
-    // Si l'utilisateurs n'a pas de préférences return un tableau vide 
+
+    // Si l'utilisateurs n'a pas de préférences return un tableau vide
      if (preferences == []){
          return []
      }

@@ -3,13 +3,12 @@
 <head>
     <title>Forum geek</title>
     <meta charset="utf-8">
-    <script language="Javascript" src="jquery-3.2.1.min.js"></script>
-    <script language="Javascript" src="profil.js"></script>
+    <script language="Javascript" src=""></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="style_profil.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-<body  id = "cont">
+<body>
     <header>
         <h1 class="text-center">FORUM</h1>
         <h2 class="text-center">Le forum de la culture geek</h2>
@@ -37,33 +36,67 @@
         </div>
     </nav>
 
-
-    <div ng-show="product.images.length" class="img-wrap col-md-3" id="test">
+<table>
+    <tr>
+        <th>
+             <div ng-show="product.images.length" class="img-wrap col-md-3" id="test">
         <img src="https://vignette.wikia.nocookie.net/crashban/images/1/1a/Crash_Bandicoot_XS.png/revision/latest?cb=20151120044516" />
     </div>
-
-<div id = "droite">
-    <br>Pseudo: <div id = "nom">Sara</div>
-    <br>Genre: <div id = "genre">Femme</div>
-    <br>Inscrit(e) le : <div id="date">21/11/2017</div>
+        </th>
+  
+        <th>
+            <div  id = "droite">
+    <br>Sara
+    <br>Femme
+    <br>Inscrit(e) le : 21/11/2017
 </div>
+        </th>
+   
+        <th>
+             <div id="pref"><h3>Preferences:</h3><br>
+           <span id = "v">
+<ul id="menu-vertical">
+    <li><a href="#"><h5>Films</h5></a>
+        <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+        </ul>
+    </li>
+</ul>
+            </span>
+
+        <span id = "v">
+<ul id="menu-vertical">
+    <li><a href="#"><h5>Séries</h5></a>
+        <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+        </ul>
+    </li>
+</ul>
+            </span>
 
 
-    <div id="pref"><h3>Preferences:</h3><br>
-       <ul> <h5>Films</h5>
-            <li><div id = "pref1f">Horreur</div></li>
-            <li><div id = "pref2f">Fantastique</div></li>
+        <span id = "v">
+<ul id="menu-vertical">
+    <li><a href="#"><h5>Jeux Vidéo</h5></a>
+        <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
         </ul>
-        <ul> <h5>Jeux</h5>
-            <li><div id = "pref1j">Crash Bandicoot</div></li>
-            <li><div id = "pref2j">Lara Croft</div></li>
-        </ul>
-        <ul> <h5>Séries</h5>
-            <li>Stanger Things</li>
-            <li>Riverdale</li>
-        </ul>
-    </div>
+    </li>
+</ul>
+            </span>
+        </th>
+    </tr>
 
+</table>
+
+<div id="image">
+</div>
 
 </body>
 </html>

@@ -2,11 +2,15 @@
 <head>
     <title>Forum geek</title>
     <meta charset="utf-8">
-    <script language = "Javascript" src=""></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style_index.css" />
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="shadow_box/shadowbox.css" />
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="shadow_box/shadowbox.js"></script>
+    <script type="text/javascript" src="formulaire/forum.js"></script>
+    <script type="text/javascript" src="formulaire/box.js"></script>
+    <script tpye="text/javascript" src="algorithme/selection_topic.js"></script>
+
 </head>
 <body ng-controller = "ForumController">
     <header>
@@ -30,48 +34,150 @@
                 <a class="nav-link col-md-3" href="profil.html">Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link col-md-3" href="connexion.html">Connexion/Deconnexion</a>
+                <a class="nav-link col-md-3 shadowbox" href="#">Connexion/Deconnexionn</a>
             </li>
         </ul>
     </div>
 </nav>
+<div id = "cont">
+    <main class = "col-md-13">        
+ <!-- image défilante-->
+    	<div id="slideshow">
+	<ul id="sContent">
+		<li><img src="images/fifa.jpg" alt="jeux" /></li>
+		<li><img src="images/happy.jpg" alt="film" /></li>
+		<li><img src="images/raison.jpg" alt="serie" /></li>
+	</ul>
+        </div>
 
-    <main class = "col-md-9"> <!-- Partie angular -->
+<!--menu déroulant-->
+<div id="block">
         <div>
             <h3 class = "inline"><a href="section/filmsect1.html"> Films</a></h3>
             <span id = "v">
-                Topic
 <ul id="menu-vertical">
-    <li><a href="#">V</a>
-        <ul>
-            <li>lien sous menu 1</li>
-            <li>lien sous menu 1</li>
-            <li>lien sous menu 1</li>
-            <li>lien sous menu 1</li>
+    <li><a href="#">Topics Récents</a>
+       	<ul>
+            <li><a href="#film1"><strong>Seven Sisters</strong> - zuzu30 - 20/11/17</a></li>
+            <li><a href="#film2"><strong>Shining</strong> - henri3 - 19/10/17</a></li>
+            <li><a href="#film3"><strong>Vaina</strong> - lola32 - 20/09/17</a></li>
         </ul>
     </li>
+    <li><a href="#">Topics qui pourraient vous intéresser</a>
+        <ul>
+            <li><a href="#"></a>...</li>
+            <li><a href="#"></a>...</li>
+            <li><a href="#"></a>...</li>
+        </ul>
+    </li>
+</ul>
             </span>
         </div>
 
-                <div>
+
+        <div>
             <h3 class = "inline"><a href="section/serie.html"> Séries</a></h3>
-            <span id = "v">
-                Topic
-                <a href="#">V</a>
+           <span id = "v">
+<ul id="menu-vertical">
+    <li><a href="#">Topics Récents</a>
+       	<ul>
+            <li><a href="#serie1"><strong>Riverdale</strong> - Betty18 - 22/11/17</a></li>
+            <li><a href="#serie2"><strong>House of Cards</strong> - PrésidentUSA - 10/11/17</a></li>
+            <li><a href="#serie3"><strong>Game of Thrones</strong> - Aria40 - 20/08/17</a></li>
+        </ul>
+    </li>
+
+<li><a href="#">Topics qui pourraient vous intéresser</a>
+        <ul>
+            <li><a href="#"></a>...</li>
+            <li><a href="#"></a>...</li>
+            <li><a href="#"></a>...</li>
+        </ul>
+    </li>
+</ul>
             </span>
         </div>
-                <div>
+
+        <div>
             <h3 class = "inline"><a href="section/jeux.html"> Jeux Vidéo</a></h3>
             <span id = "v">
-                Topic
-                <a href="#">V</a>
+<ul id="menu-vertical">
+    <li><a href="#">Topics Récents</a>
+       	<ul>
+            <li><a href="#jeux1"><strong>Overwatch</strong> - julien23 - 23/11/17</a></li>
+            <li><a href="#jeux2"><strong>Until Dawn</strong> - gameusedu32 - 18/11/17</a></li>
+            <li><a href="#jeux3"><strong>Final Fantaisie</strong> - raoulgeek - 17/11/17</a></li>
+        </ul>
+    </li>
+
+    <li><a id = "jeux_interet" href="#">Topics qui pourraient vous intéresser</a>
+        <ul>
+            <li id = "interet1"></li>
+            <li id = "interet2"></li>
+            <li id = "interet3"></li>
+        </ul>
+    </li>
+</ul>
             </span>
+
         </div>
-    </main>
+
+</div>
+</main>
+
+
+<!--div vide pour espace entre 2 div-->
+	<div id="vide">
+	</div>
+
+<!--galerie d'image-->
+<div class="all_gallery">
+
+<div id="lol">blabla</div>
+<div class="gallery">
+    <img src="images/sisters.jpg" alt="Seven Sisters" width="100" height="200">
+  <div class="desc">2073. La Terre est surpeuplée. Le gouvernement décide d’instaurer une politique d’enfant unique.</div>
+</div>
+
+<div class="gallery">
+    <img src="images/iron.jpg" alt="Iron Fist" width="100" height="200">
+  <div class="desc">Le milliardaire disparu, Daniel Rand, est de retour à New York, après quinze ans d'absence, pour reprendre l'entreprise familiale.</div>
+</div>
+
+
+<div class="gallery">
+    <img src="images/dawn.jpg" alt="until dawn" width="100" height="200">
+  <div class="desc">Until Dawn (traduit : Jusqu'à l'aube) est un jeu vidéo de genre survival horror sorti en août 2015 sur PlayStation 4.</div>
+</div>
+
+<div class="gallery">
+    <img src="images/river.jpg" alt="Riverdale" width="100" height="200">
+  <div class="desc">Sous ses airs de petite ville tranquille, Riverdale cache en réalité de sombres secrets.</div>
+</div>
+
+
+<div class="gallery">
+    <img src="images/justice.jpg" alt="Justice League" width="100" height="200">
+  <div class="desc">Le film réunit les super-héros de DC Comics : Superman, Batman, Wonder Woman, Aquaman, Cyborg ainsi que Flash.</div>
+</div>
+
+<div class="gallery">
+    <img src="images/stranger.jpg" alt="stranger things" width="100" height="200">
+  <div class="desc">La série est inspirée par les films fantastiques et de science-fiction des années 1980, de Steven Spielberg, John Hughes ou Stephen King.</div>
+</div>
+
+<div class="gallery">
+    <img src="images/callof.jpg" alt="Call of WWII" width="100" height="200">
+  <div class="desc">Call of Duty WW2 est le dernier épisode de la série de jeux FPS d'Activision. </div>
+</div>
+
+</div>
+
+<!--rss-->
     <aside>
     <div id = "deroul" class="col-md-3">
     <!-- DEBUT CODE MISE EN PAGE XML PAR ACTIFPUB V2 -->
-    <marquee direction="up"  scrollamount="2" onMouseOver="this.stop();" onMouseOut="this.start();">
+    <marquee direction="down"  scrollamount="2" onMouseOver="this.stop();" onMouseOut="this.start();">
         <script language="Javascript">
             var member = ""; //optionnel si vous etes inscrit sur la plateforme actifpub  le parametrage se fait dans votre espace membre
             var fichier = "http://www.01net.com/rss/actualites/jeux/";
@@ -80,12 +186,12 @@
             var aspect = "1";  //  0 ou 1 (1 permet d'afficher lien + description, 0 que les liens)
             var minute = "1";  //  0 ou 1 (1 permet d'afficher date et heure, 0 pas de date et heure)
             var sujet = "0"; //  0 ou 1 (1 permet d'afficher le titre des sujets traités, 0 pas de titre )
-            var te = "Times New Roman, serif";  // Police de caractères (Verdana, arial etc...)
+            var te = "Arial";  // Police de caractères (Verdana, arial etc...)
             var fil_textsize = "11"; // taille des liens et description
             var title_textcolor = "1F70B4"; // couleur des liens (000000 donne noir)
             var tlien = "none"; // style du lien none ou underline
             var text_textcolor = "000000";  // couleur description (000000 donne noir)
-            var frame_color = "FFFFFF"; // couleur arrière plan (FFFFFF donne blanc)
+            var frame_color = "EDF0EE"; // couleur arrière plan (FFFFFF donne blanc)
             var content = "0"; // 0 ou 1 comme paramètre optionnel, 1  format html,  0  format texte
             var extract = "";  // laisser vide ou indiquez le nombre de caractères que vous souhaitez garder dans le corps du flux
             var cache = "15"; // gestion du cache exprimée en minutes - en fonction de la fréquence de mise à jour
@@ -94,4 +200,150 @@
     </marquee>
     </div>
     </aside>
+
+
+<!--tableau page principale-->
+<div id="tableau">
+	<table>
+		<tr>
+			<th>Section Films</th>
+			<th>Intitulé</th>
+			<th>Pseudo</th>			
+		</tr>
+		
+		<tr>
+			<td><a class="nav-link col-md-3" href="#" id="film1">Seven Sisters</td>
+			<td>Critique</td>	
+			<td>zuzu30</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="film2">Shining</td>
+			<td>Pour ou contre un remake ?</td>	
+			<td>henri3</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="film3">Vaina</td>
+			<td>Critique</td>	
+			<td>Lola32</td>
+		</tr>
+
+
+		<tr>
+			<th>Section Séries</th>
+			<th>Intitulé</th>
+			<th>Pseudo</th>			
+		</tr>
+		
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="serie1">Riverdale</td>
+			<td>Débat : qui est le tueur ?</td>	
+			<td>betty18</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="serie2">House of Cards</td>
+			<td>Un acteur quitte la série</td>	
+			<td>PrsédientUSA</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="serie3">Game of Thrones</td>
+			<td>Qui sera sur le throne de fer ?</td>	
+			<td>Aria40</td>
+		</tr>
+
+
+		<tr>
+			<th>Section Jeux</th>
+			<th>Intitulé</th>
+			<th>Pseudo</th>			
+		</tr>
+		
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="jeux1">Overwatch</td>
+			<td>Cheat code</td>	
+			<td>julien23</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#"  id="jeux2">Until Dawn</td>
+			<td>Toutes les fins possible au jeu</td>	
+			<td>gameusedu32</td>
+		</tr>
+		<tr>
+			<td><a class="nav-link col-md-3" href="#" id="jeux3">Final Fantaisy</td>
+			<td>Besoin d'aide</td>	
+			<td>raoulgeek</td>
+		</table>
+
+</div>
+</div>
+<div id="boxes"/>
+<div id="dialog" class="window"/>
+<center> 
+        <ul id="onglets" class="nav nav-tabs">
+                <li>
+                    <a class="nav-link active" data-tab-id="tab-login" id="onglet1" href="#">Connexion</a>
+                </li>
+                <li class="tab-nav">
+                    <a class="nav-link" data-tab-id="tab-register" id="onglet2" href="#">Inscription</a>
+                </li>
+            
+            </ul>
+            
+            <div id="alert-box" class="alert alert-danger collapse" role="alert">
+              
+            </div>
+            
+            <div class="tab" id="tab-login">
+              <div class="card">
+                <div class="card-body">
+                  <form id="form-login">
+                    <div class="form-group">
+                      <label for="login-identifier">Identifiant ou e-mail</label>
+                      <input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+                      <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">Mot de passe</label>
+                      <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+                    </div>
+                    <button type="submit" id="bt" class="btn btn-primary">Envoyer</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab" id="tab-register" style="display:none">
+              <div class="card">
+                <div class="card-body">
+                  <form id="form-register">
+                    <div class="form-group">
+                      <label for="register-username">Identifiant</label>
+                      <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
+                      <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="register-email">Adresse e-mail</label>
+                      <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail valide">
+                      <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="register-password">Mot de passe</label>
+                      <input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+                      <small class="text-danger collapse"></small>
+                    </div>
+              
+                    <button type="submit" id="bt" class=" btn btn-primary">Envoyer</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+<input type="button" class="close" value="Quitter" />
+</center>
+</div>
+<!--Le masque-->
+<div id="page">
+</div>
+</div>
+
 </body>
+</html>
