@@ -3,7 +3,8 @@
 <head>
     <title>Forum geek</title>
     <meta charset="utf-8">
-    <script language="Javascript" src=""></script>
+    <script language="Javascript" src="jquery-3.2.1.min.js"></script>
+    <script language="Javascript" src="profil.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -39,16 +40,16 @@
 <table>
     <tr>
         <th>
-             <div ng-show="product.images.length" class="img-wrap col-md-3" id="test">
+             <div id = "image" ng-show="product.images.length" class="img-wrap col-md-3" id="test">
         <img src="https://vignette.wikia.nocookie.net/crashban/images/1/1a/Crash_Bandicoot_XS.png/revision/latest?cb=20151120044516" />
     </div>
         </th>
   
         <th>
-            <div  id = "droite">
-    <br>Sara
-    <br>Femme
-    <br>Inscrit(e) le : 21/11/2017
+            <div>
+    <br><div id = "nom">I</div>
+    <br><div id = "genre">J</div>
+    <br><div id = "date">K</div>
 </div>
         </th>
    
@@ -58,9 +59,9 @@
 <ul id="menu-vertical">
     <li><a href="#"><h5>Films</h5></a>
         <ul>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
+            <li id = "pf1">...</li>
+            <li id = "pf2">...</li>
+            <li id = "pf3">...</li>
         </ul>
     </li>
 </ul>
@@ -70,9 +71,9 @@
 <ul id="menu-vertical">
     <li><a href="#"><h5>Séries</h5></a>
         <ul>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
+            <li id = "ps1">...</li>
+            <li id = "ps2">...</li>
+            <li id = "ps3">...</li>
         </ul>
     </li>
 </ul>
@@ -83,9 +84,9 @@
 <ul id="menu-vertical">
     <li><a href="#"><h5>Jeux Vidéo</h5></a>
         <ul>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
+            <li id = "pj1">...</li>
+            <li id = "pj2">...</li>
+            <li id = "pj3">...</li>
         </ul>
     </li>
 </ul>

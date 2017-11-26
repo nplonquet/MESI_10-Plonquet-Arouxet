@@ -3,19 +3,41 @@
         "id": 1,
         "username": "toto",
         "password": "titi",
+        "genre": "Féminin",
         "email": "toto@gmail.com",
-        "preferences": [
-            "FPS",
-            "RPG",
-            "VR"]
+        "date": "15/08/16",
+        "image": "images/toto.jpg",
+        "preferencesJ": [
+             "FPS",
+             "RPG",
+             "VR"],
+        "preferencesF": [
+            "Horreur",
+            "Romance",
+            "Policier"],
+        "preferencesS": [
+            "Stranger Things",
+            "Manga",
+            "Humour"]
             },{
         "id": 2,
         "username": "JMB",
         "password": "Coucou",
-        "preferences": [
-                        "Action",
-                        "PC",
-                        "RPG"]
+        "genre": "Masculin",
+        "date": "22/09/17",
+        "email": "JMB@hotmail.fr",
+        "preferencesJ": [
+            "FPS",
+            "RPG",
+            "VR"],
+       "preferencesF": [
+           "Horreur",
+           "Romance",
+           "Policier"],
+       "preferencesS": [
+           "Stranger Things",
+           "Manga",
+           "Humour"]
         
-        }]
+        }]    
 }
