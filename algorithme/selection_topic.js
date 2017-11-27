@@ -73,9 +73,10 @@ $(document).ready(function($) {
             var i = 0;
             while (i < data.user.length) {
                 var util = Object.create(utilisateur);
-                util.initUser(data.user[i].id, data.user[i].preferences);
+                util.initUser(data.user[i].id, data.user[i].preferencesJ);
                 util.ajouter();
                 i++;
+                console.log(data)
             }
         },
         'json'

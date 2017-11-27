@@ -5,8 +5,12 @@
     <meta charset="utf-8">
     <script language="Javascript" src="jquery-3.2.1.min.js"></script>
     <script language="Javascript" src="profil.js"></script>
+    <script type="text/javascript" src="formulaire/forum.js"></script>
+    <script type="text/javascript" src="formulaire/box.js"></script>
+    <script language="Javascript" src="shadow_box/sb.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="shadow_box/shadowbox.css" />
 </head>
 
 <body>
@@ -31,7 +35,7 @@
                     <a class="nav-link col-md-3" href="profil.html">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link col-md-3" href="connexion.html">Connexion/Deconnexion</a>
+                    <a class="nav-link col-md-3 shadowbox" href="#">Connexion/Deconnexion</a>
                 </li>
             </ul>
         </div>
@@ -91,13 +95,88 @@
     </li>
 </ul>
             </span>
+            <div class="button">
+            <button onClick="javascript:document.location.href='index.html'">Modifier</button>
+            </div>
         </th>
     </tr>
-
 </table>
 
 <div id="image">
 </div>
+
+
+<div id="boxes" />
+<div id="dialog" class="window" />
+<center>
+    <ul id="onglets" class="nav nav-tabs">
+        <li>
+            <a class="nav-link active" data-tab-id="tab-login" id="onglet1" href="#">Connexion</a>
+        </li>
+        <li class="tab-nav">
+            <a class="nav-link" data-tab-id="tab-register" id="onglet2" href="#">Inscription</a>
+        </li>
+
+    </ul>
+
+    <div id="alert-box" class="alert alert-danger collapse" role="alert">
+
+    </div>
+
+    <div class="tab" id="tab-login">
+        <div class="card">
+            <div class="card-body">
+                <form id="form-login">
+                    <div class="form-group">
+                        <label for="login-identifier">Identifiant ou e-mail</label>
+                        <input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+                        <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mot de passe</label>
+                        <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+                    </div>
+                    <button type="submit" id="bt" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab" id="tab-register" style="display:none">
+        <div class="card">
+            <div class="card-body">
+                <form id="form-register">
+                    <div class="form-group">
+                        <label for="register-username">Identifiant</label>
+                        <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)"
+                        />
+                        <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail valide">
+                        <small class="text-danger collapse"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Mot de passe</label>
+                        <input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+                        <small class="text-danger collapse"></small>
+                    </div>
+
+                    <button type="submit" id="bt" class=" btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <input type="button" class="close" value="Quitter" />
+</center>
+</div>
+<!--Le masque-->
+<div id="page">
+</div>
+</div>
+
 
 </body>
 </html>

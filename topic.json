@@ -2,7 +2,7 @@
   "topic": [{
         "id": 1,
         "Auteur": "Truffe",
-        "titre": "Star wars BF",
+        "titre": "Star wars BF où l'apologie suprême de la politique DLC",
         "date": "11-15-2016",
         "tags": [
             "RPG",
@@ -14,7 +14,7 @@
     },{
         "id": 2,
         "Auteur": "Xx_DarkSasuke_xX",
-        "titre": "Skyrim",
+        "titre": "Skyrim: je suis coincé à Blancherive",
         "date": "08-25-2016",
         "tags": [
             "RPG",
@@ -25,7 +25,7 @@
         "rate": 3
     },{
         "id": 3,
-        "titre": "Doom",
+        "titre": "Doom le seul vrai",
         "Auteur": "Toto",
         "date": "08-25-2017",
         "tags": [
@@ -37,7 +37,7 @@
         "rate": 5
     },{
         "id": 4,
-        "titre": "Dota",
+        "titre": "Dota: vers le déclin?",
         "Auteur": "JMB",
         "date": "11-23-2017",
         "tags": [
@@ -49,7 +49,7 @@
         "rate": 9
     },{
         "id": 5,
-        "titre": "Tomb rider",
+        "titre": "Tomb rider : Le retour du premier",
         "Auteur": "Marjodu31",
         "date": "11-23-2017",
         "tags": [

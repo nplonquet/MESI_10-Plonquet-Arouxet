@@ -141,14 +141,12 @@ body {
   max-height: 15em;
 }
 
-#tag1{
+.tag1{
   float: left ;
 }
 
-#tag2{
-  float: left ;
-}
-
-#tag3{
-  float: left ;
+.tag2{
+  float: left;
+  overflow: auto;
+  margin: auto;
 }

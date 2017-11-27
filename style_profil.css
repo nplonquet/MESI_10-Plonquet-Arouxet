@@ -6,24 +6,68 @@ main {
 #test {
     float: left;
     width: 13%;
-    height: 350px;
+    height: 30%;
 }
 
 
 #droite {
-	width: 130px;
-	height: 350px;
-	/* overflow: auto; */
+	width: 50%;
+	height: 30%;
+	overflow: auto;
+	display: flex;
 	text-align: center;
 	float: left;
 }
 
+
 #pref {
 	width: 600px;
-	height: 600px;
+	height: 300px;
 	overflow: auto;
 }
 
-#image {
-	background-color: yellow;
+
+/*menu déroulant*/
+#menu-vertical, #menu-vertical ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  width: 300px; /* seule ligne rajoutée */
+}
+
+#menu-vertical li {
+  position: relative;
+  background:#EFEFEF; /* juste pour cacher le texte de la page en-dessous */
+}
+
+#menu-vertical a {
+  display:block;
+  text-decoration: none;
+  color: #000;
+}
+
+#menu-vertical ul {
+  position: absolute;
+  left:-999em;
+}
+
+#menu-vertical li:hover ul {
+  top: 0;
+  left: 300px;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 5%;
+    border: 1;
+    overflow-y: hidden
+}
+th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+}
+
+body {
+  background-color: #EDF0EE;
 }
